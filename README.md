@@ -63,9 +63,7 @@ Otherwise, you can just use it, it will use the default settings.
 
 ## Usage
 
-This package contains 2 basic Widgets that you can use: 
-    -   BreakpointContainer
-    -   BreakpointBuilder
+This package contains 2 basic Widgets that you can use: BreakpointContainer and BreakpointBuilder
 
 
 BreakpointContainer - Use it if you want to place object inside a container that will be resized based on the breakpoint.
