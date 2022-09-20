@@ -1,7 +1,7 @@
 import 'package:screen_breakpoints/screen_breakpoints.dart';
 
-final kDefaultBreakpoints = DefaultBreakpoints();
-final kMaterialBreakpoints = MaterialBreakpoints();
+const kDefaultBreakpoints = DefaultBreakpoints();
+const kMaterialBreakpoints = MaterialBreakpoints();
 
 // Default breakpoints based on Bootstrap
 class DefaultBreakpoints extends BreakpointConfiguration {

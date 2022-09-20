@@ -30,12 +30,7 @@ class BreakpointConfiguration extends Equatable {
     return result;
   }
 
-  const BreakpointConfiguration({required this.xs, this.sm, this.md, this.lg, this.xl, this.xxl})
-      : assert((sm != null && xs < sm) || sm == null),
-        assert((md != null && sm != null && sm < md) || md == null),
-        assert((lg != null && md != null && md < lg) || lg == null),
-        assert((xl != null && lg != null && lg < xl) || xl == null),
-        assert((xxl != null && xl != null && xl < xxl) || xxl == null);
+  const BreakpointConfiguration({required this.xs, this.sm, this.md, this.lg, this.xl, this.xxl});
 
   @override
   List<Object?> get props => [xs, sm, md, lg, xl, xxl];

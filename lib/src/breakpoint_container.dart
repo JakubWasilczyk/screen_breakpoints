@@ -71,11 +71,6 @@ class BreakpointContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final configuration = BreakpointConfigurator.maybeOf(context)?.configuration ?? kDefaultBreakpoints;
     final breakpoint = Breakpoint.fromContext(context);
-    EdgeInsets? margin;
-    if (breakpoint.margin != null && !fluid) {
-      margin = EdgeInsets.only(left: breakpoint.margin!, right: breakpoint.margin!);
-    }
-    final padding = EdgeInsets.only(left: breakpoint.padding, right: breakpoint.padding);
     final child = getChild(breakpoint, configuration);
 
     return Container(
@@ -86,8 +81,8 @@ class BreakpointContainer extends StatelessWidget {
         decoration: decoration,
         foregroundDecoration: foregroundDecoration,
         alignment: alignment,
-        margin: margin,
-        padding: padding,
+        margin: fluid ? null : breakpoint.margin,
+        padding: breakpoint.padding,
         height: height,
         width: fluid ? double.infinity : breakpoint.width,
         child: child,

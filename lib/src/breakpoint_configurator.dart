@@ -10,8 +10,12 @@ class BreakpointConfigurator extends InheritedWidget {
   BreakpointConfigurator({
     Key? key,
     required Widget child,
-    BreakpointConfiguration? configuration,
-  })  : configuration = configuration ?? DefaultBreakpoints(),
+    this.configuration = kDefaultBreakpoints,
+  })  : assert(configuration.sm == null || configuration.sm! > configuration.xs),
+        assert(configuration.md == null || configuration.md! > configuration.sm),
+        assert(configuration.lg == null || configuration.lg! > configuration.md),
+        assert(configuration.xl == null || configuration.xl! > configuration.lg),
+        assert(configuration.xxl == null || configuration.xxl! > configuration.xl),
         super(key: key, child: child);
 
   static BreakpointConfigurator of(BuildContext context) {

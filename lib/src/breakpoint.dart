@@ -3,28 +3,35 @@ import 'package:flutter/widgets.dart';
 import 'package:screen_breakpoints/screen_breakpoints.dart';
 
 class Breakpoint extends Equatable {
-  //Breakpoint from which it will apply
+  // Breakpoint from which it will apply
   final double breakpoint;
 
-  //Body maximum width
+  // Body maximum width
   final double width;
 
-  //Left and right margin
-  final double? margin;
+  // Margin (only left and right)
+  final double? _marginValue;
 
-  //Left and right padding
-  final double padding;
+  // Margin (only left and right)
+  EdgeInsets? get margin => _marginValue != null ? EdgeInsets.symmetric(horizontal: _marginValue!) : null;
 
-  //Number of columns on that breakpoint
+  // Padding (only left and right)
+  final double _paddingValue;
+
+  // Padding (only left and right)
+  EdgeInsets get padding => EdgeInsets.symmetric(horizontal: _paddingValue);
+
+  // Number of columns on that breakpoint
   final int columns;
 
   const Breakpoint({
     required this.breakpoint,
     required this.width,
-    required this.margin,
-    required this.padding,
+    required double? margin,
+    required double padding,
     required this.columns,
-  });
+  })  : _marginValue = margin,
+        _paddingValue = padding;
 
   @override
   List<Object?> get props => [breakpoint, width, margin, padding, columns];

@@ -8,14 +8,27 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  // Copied from Material Design
+  static const breakpoints = BreakpointConfiguration(
+    xs: Breakpoint(breakpoint: 0, width: double.infinity, margin: 16, padding: 0, columns: 4),
+    sm: Breakpoint(breakpoint: 600, width: double.infinity, margin: 32, padding: 0, columns: 8),
+    md: Breakpoint(breakpoint: 905, width: 840, margin: null, padding: 0, columns: 12),
+    lg: Breakpoint(breakpoint: 1240, width: double.infinity, margin: 200, padding: 0, columns: 12),
+    xl: Breakpoint(breakpoint: 1440, width: 1040, margin: null, padding: 0, columns: 12),
+    xxl: null,
+  );
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+    return BreakpointConfigurator(
+      configuration: breakpoints,
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
