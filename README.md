@@ -12,21 +12,25 @@ Another breakpoint framework. Aims to simplify as much as possible building adap
 
 #### Default breakpoints (Bootstrap)
 
-X-Small             xs/none     0
-Small               sm          ≥576
-Medium              md          ≥768
-Large               lg          ≥992
-Extra large         xl          ≥1200
-Extra extra large   xxl         ≥1400
+| Size | Name | Minimum Width |
+| --- | --- | --- |
+| X-Small           | xs/none | 0 |
+| Small             | sm      | ≥576 |
+| Medium            | md      | ≥768 |
+| Large             | lg      | ≥992 |
+| Extra large       | xl      | ≥1200 |
+| Extra extra large | xxl     | ≥1400 |
 
 #### Material Design breakpoints
 
-X-Small             xs/none     0
-Small               sm          ≥600
-Medium              md          ≥905
-Large               lg          ≥1240
-Extra large         xl          ≥1440
-Extra extra large   xxl         -
+| Size | Name | Minimum Width |
+| --- | --- | --- |
+| X-Small           | xs/none | 0 |
+| Small             | sm      | ≥600 |
+| Medium            | md      | ≥905 |
+| Large             | lg      | ≥1240 |
+| Extra large       | xl      | ≥1440 |
+| Extra extra large | xxl     | - |
 
 ## Getting started
 
@@ -85,8 +89,8 @@ Widget build(BuildContext context) {
 ## Usage
 
 This package contains 2 basic Widgets that you can use: 
-- [BreakpointContainer](#breakpoint-container) 
-- [BreakpointBuilder](#breakpoint-builder)
+- [BreakpointContainer](#breakpointcontainer) 
+- [BreakpointBuilder](#breakpointbuilder)
 
 #### BreakpointContainer
 Use it if you want to place object inside a container that will be resized based on the breakpoint.
