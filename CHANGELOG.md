@@ -1,3 +1,7 @@
+## 1.0.3
+
+- Improved README.md and CHANGELOG.md
+
 ## 1.0.2
 
 - Improved example
