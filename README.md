@@ -1,27 +1,48 @@
+
 Another breakpoint framework. Aims to simplify as much as possible building adaptive layouts.
 
 ## Features
 
-Really simple implementation 
-Works with and without configuration 
-Highly customizable
-Bootstrap breakpoints or Material Design breakpoints
+- Really simple implementation 
+- Works with and without configuration 
+- Customizable
+- Bootstrap breakpoints or Material Design breakpoints ready
+
+## Breakpoints
+
+#### Default breakpoints (Bootstrap)
+
+X-Small             xs/none     0
+Small               sm          ≥576
+Medium              md          ≥768
+Large               lg          ≥992
+Extra large         xl          ≥1200
+Extra extra large   xxl         ≥1400
+
+#### Material Design breakpoints
+
+X-Small             xs/none     0
+Small               sm          ≥600
+Medium              md          ≥905
+Large               lg          ≥1240
+Extra large         xl          ≥1440
+Extra extra large   xxl         -
 
 ## Getting started
 
-Import the library
+- Import the library
 
 ```dart
 import 'package:screen_breakpoints/screen_breakpoints.dart';
 ```
 
-If you want to personalize all the breakpoints, wrap up any widget above MaterialApp (or any other
+- If you want to personalize all the breakpoints, wrap up any widget above MaterialApp (or any other
 App that you use). For example:
 
 ```dart
 /* ... */
 // This is just like the default configuration
-final myBreakpoints = BreakpointConfiguration(
+const myBreakpoints = BreakpointConfiguration(
   xs: const Breakpoint(breakpoint: 0, width: double.infinity, margin: null, padding: 16, columns: 4),
   sm: const Breakpoint(breakpoint: 576, width: 540, margin: null, padding: 16, columns: 8),
   md: const Breakpoint(breakpoint: 768, width: 720, margin: null, padding: 16, columns: 12),
@@ -59,15 +80,17 @@ Widget build(BuildContext context) {
 ```
 
 
-Otherwise, you can just use it, it will use the default settings.
+- Otherwise, you can just use it, it will use the default settings.
 
 ## Usage
 
-This package contains 2 basic Widgets that you can use: BreakpointContainer and BreakpointBuilder
+This package contains 2 basic Widgets that you can use: 
+- [BreakpointContainer](#breakpoint-container) 
+- [BreakpointBuilder](#breakpoint-builder)
 
-
-BreakpointContainer - Use it if you want to place object inside a container that will be resized based on the breakpoint.
-    Generally good to use inside Scaffold's body. It can automatically swap children that match the layout for the current breakpoint.
+#### BreakpointContainer
+Use it if you want to place object inside a container that will be resized based on the breakpoint.
+Generally good to use inside Scaffold's body. It can automatically swap children that match the layout for the current breakpoint.
 
 ```dart
 /* ... */
@@ -114,10 +137,11 @@ BreakpointContainer(
 ```
 
 
-BreakpointBuilder - This is the builder based on the BreakpointContainer. 
-    If you need to build a complex layout for each breakpoint you can use this one.
-    It uses the BreakpointContainer under the hood but gives back a builder that on each rebuild will provide:
-    BuildContext, Breakpoint you are currently in and BreakpointConfiguration.
+#### BreakpointBuilder
+This is the builder based on the BreakpointContainer. 
+If you need to build a complex layout for each breakpoint you can use this one.
+It uses the BreakpointContainer under the hood but gives back a builder that on each rebuild will provide:
+BuildContext, Breakpoint you are currently in and BreakpointConfiguration.
 
 
 Example:
