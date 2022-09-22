@@ -1,3 +1,7 @@
+## 1.0.4
+
+- Added padding override functionality to BreakpointContainer and BreakpointBuilder
+
 ## 1.0.3
 
 - Improved README.md and CHANGELOG.md

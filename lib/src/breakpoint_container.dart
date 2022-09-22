@@ -41,6 +41,9 @@ class BreakpointContainer extends StatelessWidget {
   // If fluid is true, the width will always be max
   final bool fluid;
 
+  // If set overrides the default padding set in BreakpointConfigurator
+  final EdgeInsets? padding;
+
   const BreakpointContainer({
     Key? key,
     this.height,
@@ -50,6 +53,7 @@ class BreakpointContainer extends StatelessWidget {
     this.alignment,
     this.clipBehavior = Clip.none,
     this.fluid = false,
+    this.padding,
     this.xxlChild,
     this.xlChild,
     this.lgChild,
@@ -82,7 +86,7 @@ class BreakpointContainer extends StatelessWidget {
         foregroundDecoration: foregroundDecoration,
         alignment: alignment,
         margin: fluid ? null : breakpoint.margin,
-        padding: breakpoint.padding,
+        padding: padding ?? breakpoint.padding,
         height: height,
         width: fluid ? double.infinity : breakpoint.width,
         child: child,
