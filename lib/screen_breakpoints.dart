@@ -5,4 +5,5 @@ export 'src/breakpoint_builder.dart';
 export 'src/breakpoint_configuration.dart';
 export 'src/breakpoint_configurator.dart';
 export 'src/breakpoint_container.dart';
+export 'src/build_context_ext.dart';
 export 'src/default_breakpoints.dart';

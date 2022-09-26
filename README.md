@@ -186,3 +186,21 @@ BreakpointContainer(
     fluid: // Setting fluid to true will ignore breakpoint's width and margin
 );
 ```
+
+## Find current Breakpoint
+
+There is a simple way to find the current Breakpoint either from Context or MediaQuery.
+Just type inside the build function:
+
+```dart
+Widget build(BuildContext context) {
+  // From Build Context
+  final breakpoint = Breakpoint.fromContext(context);
+  // Alternative way
+  final breakpoint = context.breakpoint;
+  
+  // From Media Query
+  final mediaQuery = MediaQuery.of(context);
+  final breakpoint = Breakpoint.fromMediaQuery(mediaQuery);
+}
+```

@@ -1,3 +1,7 @@
+## 1.0.5
+
+- Added BuildContext Extension to library export that helps finding the breakpoint from context
+
 ## 1.0.4
 
 - Added padding override functionality to BreakpointContainer and BreakpointBuilder

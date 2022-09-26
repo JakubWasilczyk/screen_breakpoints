@@ -1,6 +1,6 @@
 name: screen_breakpoints
 description: A new flutter layout package.
-version: 1.0.4
+version: 1.0.5
 repository: https://github.com/JakubWasilczyk/screen_breakpoints
 
 environment:
